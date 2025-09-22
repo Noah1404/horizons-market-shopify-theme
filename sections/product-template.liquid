@@ -1,0 +1,21 @@
+<!-- Product Template Section: Customize this markup as needed -->
+<div class="max-w-4xl mx-auto py-12 px-4">
+  <div class="flex flex-col md:flex-row gap-8">
+    <div class="md:w-1/2">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | img_url: '800x800' }}" alt="{{ product.title }}" class="rounded-lg shadow-md w-full" />
+      {% endif %}
+    </div>
+    <div class="md:w-1/2 flex flex-col justify-center">
+      <h1 class="text-3xl hm-font-serif font-bold mb-2">{{ product.title }}</h1>
+      <div class="mb-4 text-lg text-neutral-600">{{ product.price | money }}</div>
+      <div class="mb-6">{{ product.description }}</div>
+      <form action="/cart/add" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded">
+          Add to Cart
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
