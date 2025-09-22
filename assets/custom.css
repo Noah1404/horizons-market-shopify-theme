@@ -1,0 +1,35 @@
+/* Horizons Market Custom Styles */
+/* This file is included after Tailwind, so you can override Tailwind here. */
+
+:root {
+  --primary: #2E4057;
+  --accent: #E3A857;
+  --neutralLight: #F6F7F9;
+  --neutralDark: #1C1C1C;
+}
+
+.button-hm {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.button-hm:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.horizon-market section {
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+header {
+  box-shadow: 0 2px 4px 0 #0001;
+}
+
+.hm-font-serif { font-family: 'Cormorant Garamond', 'Playfair Display', serif !important; }
+.hm-font-sans  { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif !important; }
